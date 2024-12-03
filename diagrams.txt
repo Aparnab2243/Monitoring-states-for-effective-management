@@ -1,0 +1,47 @@
+   Incident State Transition Diagram 
+
+   +------------+       [Start Investigation]        +-------------+
+     |    New     |----------------------------------->| In Progress |
+     +------------+                                      +-------------+
+            ^                                                |
+            |                                                v
+[Escalate Issue]                         [Resolve Issue]     +------------+
+            |                          --------------------> |  Resolved  |
+            +-------------------------------------------------+------------+
+                                                |
+                                                v
+                                          [Close Incident]     
+                                                |
+                                          +-------------+
+                                          |   Closed    |
+                                          +-------------+
+ 
+Incident Flowchart for State Management
+
+              +------------+
+              |  New       |
+              +------------+
+                   |
+           [Investigate]
+                   v
+              +-------------+
+              | In Progress |
+              +-------------+
+                   |
+           [Resolved?]
+         +---------+---------+
+         |                   |
+     [Yes]                 [No]
+       |                     |
+   [Resolve Issue]           |
+       |                     |
+       v                     |
+   +-------------+            |
+   |  Resolved  | <-----------+
+   +-------------+ 
+       |
+   [Close Incident]
+       v
+   +-------------+
+   |   Closed    |
+   +-------------+
